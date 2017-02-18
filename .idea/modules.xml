@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/ElixirServer/ElixirServer.iml" filepath="$PROJECT_DIR$/ElixirServer/ElixirServer.iml" />
+      <module fileurl="file://$PROJECT_DIR$/KotlinSockets.iml" filepath="$PROJECT_DIR$/KotlinSockets.iml" />
+    </modules>
+  </component>
+</project>
