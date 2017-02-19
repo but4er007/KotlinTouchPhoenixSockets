@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/ElixirServer/ElixirServer.iml" filepath="$PROJECT_DIR$/ElixirServer/ElixirServer.iml" />
+      <module fileurl="file://$PROJECT_DIR$/KotlinClient/KotlinClient.iml" filepath="$PROJECT_DIR$/KotlinClient/KotlinClient.iml" />
       <module fileurl="file://$PROJECT_DIR$/KotlinSockets.iml" filepath="$PROJECT_DIR$/KotlinSockets.iml" />
     </modules>
   </component>

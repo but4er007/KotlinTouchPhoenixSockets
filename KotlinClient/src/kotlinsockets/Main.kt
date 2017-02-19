@@ -1,14 +1,13 @@
-package ru.but4er007.kotlinsockets
+package kotlinsockets
 
 import okhttp3.*
 import okhttp3.logging.HttpLoggingInterceptor
-import okio.ByteString
 import org.json.JSONObject
 
 fun main(args: Array<String>) {
     Thread({
         val request = Request.Builder()
-                .url("ws://localhost:4000/socket/websocket")
+                .url("ws://localhost:45569/socket/websocket")
                 .build();
 
         val logging = HttpLoggingInterceptor(LoggerForInterceptor())
@@ -46,15 +45,14 @@ class Listener : WebSocketListener() {
         super.onMessage(webSocket, text)
         println(text)
         val ref = JSONObject(text).getString("event")
-        when(ref){
+        when (ref) {
             "phx_reply" -> webSocket?.send("{\"topic\":\"room:lobby\", \"event\":\"new_msg\", \"payload\": {\"body\": \"HI!!!\"}, \"ref\":\"send_message\"}")
             "new_msg" -> println("new message" + JSONObject(text).getJSONObject("payload").getString("body"));
         }
     }
 
-    override fun onMessage(webSocket: WebSocket?, bytes: ByteString?) {
+    override fun onMessage(webSocket: WebSocket?, bytes: okio.ByteString?) {
         super.onMessage(webSocket, bytes)
-        println("onMessage " + bytes)
     }
 
     override fun onClosed(webSocket: WebSocket?, code: Int, reason: String?) {
